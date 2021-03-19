@@ -1,5 +1,5 @@
 ---
-published: false
+published: true
 title: "Create new base box for Vagrant development"
 cover_image: "https://raw.githubusercontent.com/rpsu/devto-blog/main/blog-posts/2015-12-create-new-base-box-for-vagrant-development/assets/slam-logo.jpg"
 description: "A walkthrough of base image creation with Scientific Linux 7 (12/2015)"
