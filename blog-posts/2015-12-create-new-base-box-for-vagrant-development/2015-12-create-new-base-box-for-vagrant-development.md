@@ -313,6 +313,8 @@ Putting the credit wher it belongs! Main sources used to get this stuff in order
 * [https://xuri.me/2015/09/06/resolve-setting-locale-failed-on-linux.html]()
 * [http://www.itzgeek.com/how-tos/linux/centos-how-tos/change-hostname-in-centos-7-rhel-7.html]()
 
-# Found a typo?
+--- 
 
-If you've found a typo, a sentence that could be improved or anything else that should be updated on this blog post, you can access it through a git repository and make a pull request. Instead of posting a comment, please go directly to <REPO URL> and open a new pull request with your changes.
+### Found a typo? Spotted grammar mistakes or confusing phrases?
+
+If you've found a typo, a sentence that could be improved or anything else that should be updated on this blog post, you can access it through a git repository and make a pull request. Instead of posting a comment, please go directly to [my Dev.to Github repository](https://github.com/rpsu/devto-blog/tree/main/blog-posts) and open a new pull request with your changes.
