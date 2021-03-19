@@ -1,8 +1,8 @@
-name: push
+name: publish
 on:   
   push:
     branches:
-      - main
+      - master
 
 jobs:
   publish:
@@ -16,12 +16,9 @@ jobs:
         node-version: 12
 
     - name: Publish articles on dev.to
-      uses: rpsu/devto-blog@main
+      uses: sinedied/publish-devto@master
       with:
         files_glob: 'posts/**/*.md'
         devto_key: ${{ secrets.DEV_TO_GIT_TOKEN }}
-        __github_token: ${{ secrets.GH_TOKEN }}
+        github_token: ${{ secrets.GH_TOKEN_FOR_DEVTO }}
         conventional_commits: true
-
-
-
