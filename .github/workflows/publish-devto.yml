@@ -1,0 +1,27 @@
+name: push
+on:   
+  push:
+    branches:
+      - main
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    if: "! contains(toJSON(github.event.commits.*.message), '[skip ci]')"
+
+    steps:
+    - uses: actions/checkout@v1
+    - uses: actions/setup-node@v1
+      with:
+        node-version: 12
+
+    - name: Publish articles on dev.to
+      uses: rpsu/devto-blog@main
+      with:
+        files_glob: 'posts/**/*.md'
+        devto_key: ${{ secrets.DEV_TO_GIT_TOKEN }}
+        __github_token: ${{ secrets.GH_TOKEN }}
+        conventional_commits: true
+
+
+
