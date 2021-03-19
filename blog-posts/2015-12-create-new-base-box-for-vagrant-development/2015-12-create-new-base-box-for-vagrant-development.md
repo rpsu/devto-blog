@@ -6,10 +6,12 @@ description: "A walkthrough of base image creation with Scientific Linux 7 (12/2
 tags: vagrant, scientific linux, sl7, localdev
 series:
 canonical_url: https://web.archive.org/web/20160624001745/http://www.exove.com/techblog/create-new-base-box-for-vagrant-development/
+
 ---
 
 This blog post has been initially released in [Exove](https://www.exove.com)'s Tech blog, but [can only be found on the Archive Org's magnificient web archive](https://web.archive.org/web/20160624001745/http://www.exove.com/techblog/create-new-base-box-for-vagrant-development/) since the blog has disappeared after the publication day.  
 As turned out, the "first post" ended up being the only one, not a serie of blog posts.
+
 --
 
 This is a first post of series "Get your local [Drupal] development environment in decent shape". Although this is targeted to Drupal developers, first three parts are fully CMS agnostic. So you could use this as a basis to get any other - say Wordpress, Ez or any other PHP based - CMS developing platform up and running.
