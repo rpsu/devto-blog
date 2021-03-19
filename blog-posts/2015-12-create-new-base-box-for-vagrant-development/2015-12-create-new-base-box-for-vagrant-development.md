@@ -10,9 +10,11 @@ canonical_url: https://web.archive.org/web/20160624001745/http://www.exove.com/t
 ---
 
 This blog post has been initially released in [Exove](https://www.exove.com)'s
-Tech blog, but [can only be found on the Archive Org's magnificient webarchive](https://web.archive.org/web/20160624001745/http://www.exove.com/techblog/create-new-base-box-for-vagrant-development/) 
+Tech blog, but [can only be found on the Archive Org's magnificient
+webarchive](
+https://web.archive.org/web/20160624001745/http://www.exove.com/techblog/create-new-base-box-for-vagrant-development/)
 since the blog has disappeared after the publication day.  
-As turned out, the "first post" ended up being the only one, not a serie of 
+As turned out, the "first post" ended up being the only one, not a serie of
 blog posts.
 
 --
@@ -28,7 +30,8 @@ We at [http://www.exove.com](at Exove) are using
 [http://scientificlinux.org/](Scientific Linux 7) [SL7] as development environment
 distribution. It is a close relative to Red Hat Entrerprice Linux (and therefore
 also Centos et.al.) and there are
-[no significant differences to Red Hat](http://scientificlinux.org/about/why-make-scientific-linux/) 
+[no significant differences to Red Hat](
+http://scientificlinux.org/about/why-make-scientific-linux/)
 used so often as production site platform. It is fairly lightweight and as easy
 to configure as any Red Hat derivative.
 
@@ -225,8 +228,13 @@ personally preferred tools over other options) __[optional]__
 
 1. Install vagrant insecure key
 
+<!-- markdownlint-capture -->
+<!-- markdownlint-disable -->
+
       mkdir -p /home/vagrant/.ssh
       wget --no-check-certificate https://raw.github.com/mitchellh/vagrant/master/keys/vagrant.pub -O /home/vagrant/.ssh/authorized_keys
+
+<!-- markdownlint-restore -->
 
   Ensure we have the correct permissions set  
 
@@ -271,13 +279,13 @@ personally preferred tools over other options) __[optional]__
   [http://rpmfind.net//linux/RPM/epel/7/x86_64/d/dkms-2.2.0.3-30.git.7c3e7c5.el7.noarch.html](http://rpmfind.net//linux/RPM/epel/7/x86_64/d/dkms-2.2.0.3-30.git.7c3e7c5.el7.noarch.html).
   
   Downlaod DKMS pacakge:
-    
+
     wget ftp://rpmfind.net/linux/epel/7/x86_64/d/dkms-2.2.0.3-30.git.7c3e7c5.el7.noarch.rpm
 
   Install DKMS requirements (these will install also 30+ other packages):
 
     yum install gcc kernel-devel kernel-headers
-   
+
   Install the local DKMS package you've just downloaded:
 
     yum localinstall dkms-2.2.0.3-30.git.7c3e7c5.el7.noarch.rpm --nogpgcheck
@@ -317,12 +325,13 @@ personally preferred tools over other options) __[optional]__
   
 1. Give box a hostname __[optional]__
 
-  Use `nmcli` tool to to set a more desctiptive hostname (default is localhost.localdomain)  
+  Use `nmcli` tool to to set a more desctiptive hostname
+  (default is localhost.localdomain)
 
     nmcli general hostname sl7-dev.local
 
   Check that changes was made with
-    
+
     nmcli general hostname`
 
   **REBOOT NOW**:
@@ -332,13 +341,13 @@ personally preferred tools over other options) __[optional]__
 1. Finalize and cleanup
 
   Ensure all packages are up to date, once more.  
- 
+
     yum update
 
   Clean up yum cache
 
     yum clean all
- 
+
 1. Minimize the size of VirtualBox virtual machine file
   
   Run this command to 1st fill up the virtual drive with an empty file and
@@ -384,7 +393,7 @@ in order are (but here just as a list without any spesific order of imortance):
 * [https://xuri.me/2015/09/06/resolve-setting-locale-failed-on-linux.html](https://xuri.me/2015/09/06/resolve-setting-locale-failed-on-linux.html)
 * [http://www.itzgeek.com/how-tos/linux/centos-how-tos/change-hostname-in-centos-7-rhel-7.html](http://www.itzgeek.com/how-tos/linux/centos-how-tos/change-hostname-in-centos-7-rhel-7.html)
 
---- 
+--
 
 ### Found a typo? Spotted grammar mistakes or confusing phrases?
 
