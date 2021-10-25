@@ -16,9 +16,9 @@
     "dev-to-git": "dev-to-git"
   },
   "dependencies": {
-    "dev-to-git": "1.1.0",
-    "embedme": "1.11.0",
-    "prettier": "1.18.2",
-    "yarn": "^1.22.10"
+    "dev-to-git": "^1.4",
+    "embedme": "^1.22",
+    "prettier": "^1.18",
+    "yarn": "^1.22"
   }
 }
