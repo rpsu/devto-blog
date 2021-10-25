@@ -53,4 +53,5 @@ export type ArticlePublishedStatus = {
           updateStatus: UpdateStatus.ERROR;
           error: Error;
         }
-    )));
+    ))
+);
