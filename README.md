@@ -1,4 +1,4 @@
-# One way publishing of your blog posts from a git repo to dev.to
+# Dev.to git: One way publishing of your blog posts from a git repo to dev.to
 
 ## First, what is dev.to?
 
@@ -33,14 +33,14 @@ There's a `dev-to-git.json` file where you can define an array of blog posts, e.
 
 ## How can I find the ID of my blog post on dev.to?
 
-This repository is made to **edit** a blog post. Whether it's published or just a draft, you **have to create it** on dev.to directly. Unfortunately, dev.to does not display the ID of the blog post on the page. So once it's created, you can open your browser console and paste the following code to retrieve the blog post ID:  
-`$('div[data-article-id]').getAttribute('data-article-id')`
+Whether it's published or just a draft, you **have to create it** on dev.to directly. Unfortunately, dev.to does not display the ID of the blog post on the page. So once it's created, you can open your browser console and paste the following code to retrieve the blog post ID:  
+`+$('div[data-article-id]').getAttribute('data-article-id')`
 
 ## How do I configure every blog post individually?
 
-A blog post has to have a [**front matter**](https://dev.to/p/editor_guide) header. You can find an example in this repository here: https://github.com/maxime1992/dev.to/blob/master/blog-posts/name-of-your-blog-post/name-of-your-blog-post.md
+A blog post has to have a [**front matter**](https://dev.to/p/editor_guide) header. You can find an example in this repository here: https://github.com/maxime1992/dev-to-git/blob/master/test/article.md
 
-Simple and from there you have control over the following properties: `title`, `published`, `cover_image`, `description`, `tags`, `series` and `canonical_url`.
+Simple and from there you have control over the following properties: `title`, `published`, `description`, `tags`, `series` and `canonical_url`.
 
 ## How do I add images to my blog posts?
 
@@ -56,14 +56,10 @@ First, you have to activate the repository on Travis: https://travis-ci.org/acco
 
 Then, you have to create a token on your dev.to account: https://dev.to/settings/account and set an environment variable on Travis called `DEV_TO_GIT_TOKEN` that will have the newly created token as value.
 
-## README template
+# How can I manage my blog posts? Mono repo? One article per repo?
 
-The following is simply a template that you may want to use for your own version of that repository.
+It's totally up to you and you could even adopt both solutions at the same time.
 
-# \<YOUR NAME\>'s blog source
+You can have a repo with a single blog post, for example if you're presenting a library it might make sense to have the article written within that repo.
 
-https://dev.to/\<YOUR DEV.TO NICKNAME\>
-
-## Blog posts
-
-- [\<BLOG POST NAME\>](https://dev.to/\<BLOG POST LINK\>)
+And if you prefer a mono repo approach with all your articles in the same repo, I've built a template repository to help you get started in a few minutes only: https://github.com/maxime1992/dev.to

@@ -1,24 +1,134 @@
 {
-  "name": "devto-blog-rpsu",
+  "name": "dev-to-git",
+  "version": "0.0.0-development",
+  "description": "A CLI to keep your dev.to posts in sync from a GIT project, using the CI provider of your choice",
+  "keywords": [
+    "dev.to"
+  ],
+  "main": "bin/dev-to-git.umd.js",
+  "module": "bin/dev-to-git.es5.js",
+  "typings": "bin/types/dev-to-git.d.ts",
+  "files": [
+    "bin",
+    "README.md",
+    "LICENSE",
+    "package.json"
+  ],
+  "bin": {
+    "dev-to-git": "bin/index.js"
+  },
+  "author": "Maxime Robert <maxime.robert1992@gmail.com>",
   "repository": {
     "type": "git",
-    "url": "https://github.com/rpsu/devto-blog.git"
+    "url": "https://github.com/maxime1992/dev-to-git.git"
   },
-  "license": "CC-BY-NC-4.0",
+  "license": "MIT",
+  "engines": {
+    "node": ">=6.0.0"
+  },
   "scripts": {
-    "prettier": "prettier",
-    "embedme": "embedme blog-posts/**/*.md",
-    "prettier:base": "yarn run prettier \"**/*.{js,json,scss,md,ts,html,component.html}\"",
-    "prettier:write": "yarn run prettier:base --write",
-    "prettier:check": "yarn run prettier:base --list-different",
-    "embedme:check": "yarn run embedme --verify",
-    "embedme:write": "yarn run embedme",
-    "dev-to-git": "dev-to-git"
+    "copy-index": "cp ./src/index.js ./bin",
+    "prettier:base": "yarn run prettier \"./{src,test}/**/*.ts\" \"./**/*.{yml,md,json}\"",
+    "prettier:fix": "yarn run prettier:base --write",
+    "prettier:check": "yarn run prettier:base --check",
+    "lint": "tslint  --project tsconfig.json -t codeFrame 'src/**/*.ts' 'test/**/*.ts'",
+    "prebuild": "rimraf bin",
+    "build": "tsc --module commonjs && rollup -c rollup.config.ts && typedoc --out docs --target es6 --theme minimal --mode file src && yarn run copy-index",
+    "start": "rollup -c rollup.config.ts -w",
+    "test": "jest --coverage",
+    "test:watch": "jest --coverage --watch",
+    "test:prod": "npm run lint && npm run test -- --no-cache",
+    "report-coverage": "cat ./coverage/lcov.info | coveralls",
+    "commit": "git-cz",
+    "semantic-release": "semantic-release",
+    "precommit": "lint-staged"
+  },
+  "lint-staged": {
+    "{src,test}/**/*.ts": [
+      "prettier --write",
+      "git add"
+    ]
+  },
+  "config": {
+    "commitizen": {
+      "path": "node_modules/cz-conventional-changelog"
+    }
+  },
+  "jest": {
+    "transform": {
+      ".(ts|tsx)": "ts-jest"
+    },
+    "testEnvironment": "node",
+    "testRegex": "(/__tests__/.*|\\.(test|spec))\\.(ts|tsx|js)$",
+    "moduleFileExtensions": [
+      "ts",
+      "tsx",
+      "js"
+    ],
+    "coveragePathIgnorePatterns": [
+      "/node_modules/",
+      "/test/"
+    ],
+    "coverageThreshold": {
+      "global": {
+        "branches": 90,
+        "functions": 95,
+        "lines": 95,
+        "statements": 95
+      }
+    },
+    "collectCoverageFrom": [
+      "src/*.{js,ts}"
+    ]
+  },
+  "commitlint": {
+    "extends": [
+      "@commitlint/config-conventional"
+    ]
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^7.1.2",
+    "@commitlint/config-conventional": "^7.1.2",
+    "@types/dotenv": "6.1.1",
+    "@types/got": "9.6.0",
+    "@types/jest": "^23.3.2",
+    "@types/minimist": "1.2.0",
+    "@types/node": "^10.11.0",
+    "colors": "^1.3.2",
+    "commitizen": "^3.0.0",
+    "coveralls": "^3.0.2",
+    "cross-env": "^5.2.0",
+    "cz-conventional-changelog": "^2.1.0",
+    "husky": "^1.0.1",
+    "jest": "^23.6.0",
+    "jest-config": "^23.6.0",
+    "lint-staged": "^8.0.0",
+    "lodash.camelcase": "^4.3.0",
+    "prettier": "^1.14.3",
+    "prompt": "^1.0.0",
+    "replace-in-file": "^3.4.2",
+    "rimraf": "^2.6.2",
+    "rollup": "^0.67.0",
+    "rollup-plugin-commonjs": "^9.1.8",
+    "rollup-plugin-json": "^3.1.0",
+    "rollup-plugin-node-resolve": "^3.4.0",
+    "rollup-plugin-sourcemaps": "^0.4.2",
+    "rollup-plugin-typescript2": "^0.18.0",
+    "semantic-release": "17.4.4",
+    "shelljs": "^0.8.3",
+    "ts-jest": "^23.10.2",
+    "ts-node": "^7.0.1",
+    "tslint": "^5.11.0",
+    "tslint-config-prettier": "^1.15.0",
+    "tslint-config-standard": "^8.0.1",
+    "typedoc": "^0.12.0",
+    "typescript": "^3.0.3"
   },
   "dependencies": {
-    "dev-to-git": "^1.4",
-    "embedme": "^1.22",
-    "prettier": "^1.18",
-    "yarn": "^1.22"
+    "chalk": "^2.4.2",
+    "commander": "^2.20.0",
+    "dotenv": "8.0.0",
+    "front-matter": "3.0.2",
+    "got": "9.6.0"
   }
 }
