@@ -10,7 +10,7 @@ In short (after `npm install -g @sinedied/devto-cli`):
 
 * `dev n posts/2022/01-some-post-file-name.md` creates new post file template
 * edit the file, including 
-* `dev p [posts/2022/01-some-post-file-name.md]` publishes (single) posts
+* `dev p [--verbose] [--dry-run] [posts/2022/01-some-post-file-name.md]` publishes (single) posts
 
 Make sure your local `.env` file contains both `DEVTO_TOKEN` to allow publishing and `DEVTO_REPO` for linking assets to correct URL (this repository).
 
