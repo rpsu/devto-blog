@@ -1,15 +1,25 @@
 ---
-title: Drush make file
-description: Faithfully reproducing a codebase for website recovery
-tags: 'drupal drush'
+title: 'Security in Code Deployment - part 1: Drush make file'
+description: 'Security in Code Deployment, part 1/5'
+tags: 'drupal,drush'
 cover_image: ''
 canonical_url: null
 published: true
+id: 960457
+date: '2022-01-19T14:07:19Z'
 ---
 
 **Part 1/5.** The article was initially published in [Drupal Watchdog 7.01](https://shop.linuxnewmedia.com/us/magazines/drupal-watchdog/eh35014.html), spring 2017.
 
 **Code examples for this article**: [https://github.com/rpsu/dwd-security-in-code-deployment](https://github.com/rpsu/dwd-security-in-code-deployment)
+
+Security in Code Deployment:
+
+* Part 1: Drush make file
+* [Part 2: Patch modules with Drush](https://dev.to/rpsu/security-in-code-deployment-part-2-patch-modules-with-drush-4g6a)
+* [Part 3: Unknown Drupal codebase](https://dev.to/rpsu/security-in-code-deployment-part-3-unknown-drupal-codebase-2f3)
+* [Part 4: Advantages of using Composer JSON](https://dev.to/rpsu/security-in-code-deployment-part-4-advantages-of-using-composer-json-ijm)
+* [Part 5: Patching with Composer and Deploy](https://dev.to/rpsu/security-in-code-deployment-part-5-patching-with-composer-and-deploy-3o04)
 
 ---
 
