@@ -1,11 +1,11 @@
 ---
-published: true
 title: 'Create new base box for Vagrant development'
-cover_image: 'https://raw.githubusercontent.com/rpsu/devto-blog/main/blog-posts/2015-12-create-new-base-box-for-vagrant-development/assets/slam-logo.jpg'
 description: 'A walkthrough of base image creation with Scientific Linux 7 (12/2015)'
 tags: vagrant, scientificlinux, localdev, Drupal
 #series:
+cover_image: 'https://raw.githubusercontent.com/rpsu/devto-blog/main/posts/assets/2015/slam-logo.jpg'
 canonical_url: https://web.archive.org/web/20160624001745/http://www.exove.com/techblog/create-new-base-box-for-vagrant-development/
+published: true
 ---
 
 This blog post has been initially released in [Exove](https://www.exove.com)'s Tech blog, but [can only be found on the Archive Org's magnificient webarchive](https://web.archive.org/web/20160624001745/http://www.exove.com/techblog/create-new-base-box-for-vagrant-development/) since the blog has disappeared after the publication day.  
